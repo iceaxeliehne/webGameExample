@@ -1,0 +1,35 @@
+
+<h1>My New Web Game</h1>
+
+<canvas id="myCanvas" width="500ox" height="500px" style="border: 1px solid black; "></canvas>
+<button onclick="myUpdate()">Click me</button>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(0, 0);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+    var circle = {
+        'x_pos': 250,
+        'y_pos': 250
+    }
+
+    function myUpdate() {
+        circle.x_pos += 1;
+        myDraw();
+    }
+
+    function myDraw() {
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0,0,500,500);
+        ctx.beginPath();
+        ctx.arc(circle.x_pos, circle.y_pos, 40, 0, 2 * Math.PI);
+        ctx.stroke();
+    }
+
+    myUpdate();
+    
+
+
+</script>
